@@ -35,6 +35,9 @@ PRODUCT_PACKAGES += \
 # LiveDisplay
 $(call soong_config_set_bool,OPLUS_LINEAGE_LIVEDISPLAY_HAL,ENABLE_SE,false)
 
+# GameBar
+$(call inherit-product-if-exists, packages/apps/GameBar/gamebar.mk)
+
 # NFC
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_14/android.hardware.nfc.hce.xml \
